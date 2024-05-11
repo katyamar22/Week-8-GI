@@ -40,6 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const slicesPerPerson = (slicesTotal / peopleTotal);
         const finalNum = slicesPerPerson.toFixed(2);
 
-        resultDisplay.textContent = `Each person can have ${finalNum} slices of pizza.. Enjoy!`;
+        resultDisplay.textContent = `Each person can have ${finalNum} slices of pizza. Enjoy! 🍕 `;
     });
 });
