@@ -11,28 +11,34 @@ body {
     align-items: center;
 }
 
-h1 {
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    min-width: 600px;
+}
+
+ h1 {
     text-align: center;
     background: #c04518;
     color: white;
     width: 75%;
     padding: 15px;
 }
-#pizza-slices, #people  {
-    margin: 50px;
-}
+
+ #pizza-slices, #people  {
+    margin: 10px;
+} 
+
 
 label {
     color: white;
     background-color: #e38c3a;
-    font-size: 1.5rem;
-    margin: 30px;
-    padding: 10px;
-    border:3px solid #c04518;
-}
-
-.label-1, .label-2 {
-    margin-bottom: 30px;
+    border: 2px solid #c04518;
+    font-size: 1.25rem;
+    margin: 25px;
 }
 
 input {
@@ -40,10 +46,33 @@ input {
     font-size: 1rem
 }
 
+#submit {
+    display: flex;
+    justify-content: center;
+    background-color: #c04518;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#submit:hover {
+    background-color: #e38c3a;
+    cursor: pointer;
+}
+
 #result {
     margin: 0 auto;
     display: flex;
     width: 55%;
-    font-size: 1.5rem;
+    height: auto;
+    padding: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    justify-content: center;
     border: 3px solid #e38c3a;
-}
+    background-color: white;
+    color: #c04518;
+} 

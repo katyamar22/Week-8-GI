@@ -1,22 +1,40 @@
-// Write a function that will allow you to calculate how many slices 
-// of pizza x each person y would get if they shared evenly. The 
-// function should return an interpolated string like Each person 
-// gets 4.00 slices of pizza; from our 8-slice pizza x being a decimal 
-// in case there is no way to split the pizza evenly.
+// SOLUTION TO PROBLEM
 
-// Make variable from HTML elements
-const form = document.querySelector('form');
-const slicesInput = document.getElementById('slices-number');
-const peopleInput = document.getElementById('people-number');
-const resultInput = document.getElementById('result');
+function pizzaCalc(slices, people) {
+    let slicesAmt = slices;
+    
+    let peopleAmt = people;
+
+    let pizzaAmt = (slices / people);
+
+    let total = pizzaAmt.toFixed(2);
+
+    console.log(`Since there are ${peopleAmt} people and ${slicesAmt} slices of pizza, every person gets ${total} slices of pizza. Enjoy!`);
+}
+
+pizzaCalc(8, 4); // Since there are 4 people and 8 slices of pizza, every person gets 2 slices of pizza. Enjoy!
+
+pizzaCalc (10, 6); // Since there are 6 people and 10 slices of pizza, every person gets 1.67 slices of pizza. Enjoy!
 
 
-function pizzaCalc() {
+// SAME CONCEPT BUT AS A WEBSITE
+document.addEventListener("DOMContentLoaded", function() {
 
-    let slices = parseFloat(slicesInput.value);
-    let people = parseFloat(peopleInput.value);
+    const slicesNum = document.getElementById('slices-number');
+    const peopleNum = document.getElementById('people-number')
+    const resultDisplay = document.getElementById('result');
+    const submitButton = document.getElementById('submit')
 
-    let result = slices / people;
+    // Event listener for form submission
+    submitButton.addEventListener("click", function(event) {
+        event.preventDefault();
 
-    resultInput.textContent = `Each person gets ${result} slices of pizza`;
-}  
+        const slicesTotal = parseInt(slicesNum.value);
+        const peopleTotal = parseInt(peopleNum.value);
+
+        const slicesPerPerson = (slicesTotal / peopleTotal);
+        const finalNum = slicesPerPerson.toFixed(2);
+
+        resultDisplay.textContent = `Each person can have ${finalNum} slices of pizza.. Enjoy!`;
+    });
+});

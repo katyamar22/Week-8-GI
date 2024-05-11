@@ -13,9 +13,16 @@ class Person {
 
     // Give the Person a 'fetchJob' method that console logs the person's name and job, e.g. "Brad is a back-end developer".
     fetchJob() {
-        console.log(`${this.name} is ${this.job}`);
+        console.log(`${this.name} is a ${this.job}.`);
     }
 }
+
+let person3 = new Person('Emma', 'Nurse', 34);
+// console.log(person3); // Person { name: 'Emma', job: 'Nurse', age: 34 }
+
+// person3.exercise(); // I love going to the gym!
+
+// person3.fetchJob();// Emma is a Nurse.
 
 // Create a Programmer constructor that inherits all the members from Person with an additional 'languages' property that is passed in and a busy property that is NOT passed in and is set to true by default.
 class Programmer extends Person {
@@ -37,11 +44,11 @@ class Programmer extends Person {
 
 // Give the Programmer an 'offerNewTask' method that console logs one thing if the programmer is busy and another if the programmer is not, e.g., should initially log out "Mark can't accept any new tasks right now." and "Mark would love to take on a new responsibility." if the programmer is not busy.
     offerNewTask() {
-        if (this.busy = true) {
+        this.busy = true ?
             console.log(`${this.name} is currently not available to complete task.`)
-        } else {
+        :
             console.log(`${this.name} can complete this task.`)
-        }
+        
     }
 
 // Give the Programmer 'learnLanguage' and 'listLanguages' methods that add new languages to the programmer and 
@@ -65,7 +72,7 @@ const person2 = new Person('Claire', 'Programmer', 26);
 
 const programmer1 = new Programmer(person2.name, person2.job, person2.age, ['JavaScript']);
 console.log(programmer1); // Programmer {
-                          //     name: 'Clay',
+                          //     name: 'Claire',
                           //     job: 'Programmer',
                           //     age: 26,
                           //     languages: 'JavaScript',
