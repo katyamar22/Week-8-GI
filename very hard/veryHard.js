@@ -1,4 +1,6 @@
 // Object prototype chain and prototypal inheritance exercise.
+
+
 // Create a Person constructor that has three properties: name, job, and age.
 class Person {
     constructor (name, job, age) {
@@ -18,11 +20,12 @@ class Person {
 }
 
 let person3 = new Person('Emma', 'Nurse', 34);
-// console.log(person3); // Person { name: 'Emma', job: 'Nurse', age: 34 }
 
-// person3.exercise(); // I love going to the gym!
+console.log(person3); // Person { name: 'Emma', job: 'Nurse', age: 34 }
 
-// person3.fetchJob();// Emma is a Nurse.
+person3.exercise(); // I love going to the gym!
+
+person3.fetchJob();// Emma is a Nurse.
 
 // Create a Programmer constructor that inherits all the members from Person with an additional 'languages' property that is passed in and a busy property that is NOT passed in and is set to true by default.
 class Programmer extends Person {
